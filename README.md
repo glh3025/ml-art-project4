@@ -29,7 +29,7 @@ Trained on ~150 Onepiece manga pages. Should be better if had more training data
 
 ## Code
 
-- [manga_colorization.ipynb](manga_colorization.html): run this to simply regenerate the demonstrated results.  
+- manga_colorization.ipynb: run this to simply regenerate the demonstrated results.  
 
 For various usage:
 - train.py: 
