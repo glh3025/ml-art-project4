@@ -4,30 +4,45 @@ Lihang Gong, lgong@ucsd.edu
 
 ## Abstract
 
-As a manga/comic reader, I would be more pleasure to read colorized ones than gray-scaled ones. However, it spends much additional time for comic book creators to paint from the black&white version. What if we have an auto painter that convert b&w manga into colorized ones? In this project, I developed a manga colorization solution based on pix2pix model. It is able to colorize b&w manga pages based on some colorized samples. The future direction is to correct some inaccurate results and make them more natural.
+As a manga reader, I would be more delight to read colorized ones than gray-scaled ones. However, it takes much more additional efforts for manga creators to colorize. What if we have an auto painter that convert b&w manga into colorized ones? In this project, I developed a manga colorization solution based on pix2pix model. It is capabale of colorizing b&w manga pages based on some colorized samples. The future direction is to correct some inaccurate results and make them more natural.
+
+
+## Results
+
+Trained on ~150 Onepiece manga pages. Should be better if had more training data.
+
+| real_A | real_B | fake_B |
+| :----: | :----: | :----: |
+| <img src="imgs/0001-011.png_real_A.png" width="250"> | <img src="imgs/0001-011.png_real_B_rgb.png" width="250"> | <img src="imgs/0001-011.png_fake_B_rgb.png" width="250"> |
+| <img src="imgs/0002-012.png_real_A.png" width="250"> | <img src="imgs/0002-012.png_real_B_rgb.png" width="250"> | <img src="imgs/0002-012.png_fake_B_rgb.png" width="250"> |
+| <img src="imgs/0003-011.png_real_A.png" width="250"> | <img src="imgs/0003-011.png_real_B_rgb.png" width="250"> | <img src="imgs/0003-011.png_fake_B_rgb.png" width="250"> |
+| <img src="imgs/0004-011.png_real_A.png" width="250"> | <img src="imgs/0004-011.png_real_B_rgb.png" width="250"> | <img src="imgs/0004-011.png_fake_B_rgb.png" width="250"> |
+| <img src="imgs/0005-011.png_real_A.png" width="250"> | <img src="imgs/0005-011.png_real_B_rgb.png" width="250"> | <img src="imgs/0005-011.png_fake_B_rgb.png" width="250"> |
+| <img src="imgs/0006-011.png_real_A.png" width="250"> | <img src="imgs/0006-011.png_real_B_rgb.png" width="250"> | <img src="imgs/0006-011.png_fake_B_rgb.png" width="250"> |
+| <img src="imgs/0007-011.png_real_A.png" width="250"> | <img src="imgs/0007-011.png_real_B_rgb.png" width="250"> | <img src="imgs/0007-011.png_fake_B_rgb.png" width="250"> |
 
 
 ## Model/Data
 
-- trained models
-- training data (or link to training data)
+- Takes ~10 min to train the model.
+- Training data is included in datasets/onepiece/A/.
 
 ## Code
 
-run thi to simply regenerate the demonstrated results.
-- Python: generative_code.py
-- Jupyter notebooks: generative_code.ipynb
+- [manga_colorization.ipynb](manga_colorization.html): run this to simply regenerate the demonstrated results.  
 
-## Results
-
-Documentation of your results in an appropriate format, both links to files and a brief description of their contents:
-- image files (`.jpg`, `.png` or whatever else is appropriate)
-- move files (uploaded to youtube or vimeo due to github file size limits)
-- ... some other form
+For various usage:
+- train.py: 
+```
+python train.py --dataroot path/to/datasets --name GIVE_A_NAME --model pix2pix --direction BtoA
+```
+- test.py:
+```
+python test.py --dataroot same/path/as/above --name SAME_NAME_AS_ABOVE --model pix2pix --direction BtoA
+```
 
 ## Technical Notes
 
-- Draw codes either from this repository or from https://github.com/glh3025/ml-art-project4
 - Tested on Datahub.
 
 ## Reference
